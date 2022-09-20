@@ -2,6 +2,7 @@ const {readFileSync, writeFileSync}=require('fs');
 
 const express=require("express");
 const app=express();
+const port=5555;
 
 app.get('/',(req,res)=> {
     const count=readFileSync('./count.txt','utf-8');
@@ -21,4 +22,4 @@ app.get('/',(req,res)=> {
     `);
 });
 
-app.listen(5000,()=>console.log('http://localhost:5000/'));
+app.listen(port,()=>console.log('http://localhost:${port}/'));
